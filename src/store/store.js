@@ -1,22 +1,40 @@
 import { createStore } from "redux";
-import Simplereducer, { increment } from "../redux/reducers/Simplereducer";
+import { bindActionCreators } from "redux";
+// import Simplereducer, { increment , add} from "../redux/reducers/Simplereducer";
+import {title , profile} from '../redux/action_creators.js/Action_creator'
+import { reducer } from "../redux/reducers/Nestedreducer";
+
+const store = createStore(
+  reducer,
+  +window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
+// store.dispatch(increment());
+
+// console.log(store);
 
 
- const store = createStore(Simplereducer);
+// Subscriber 
+
+const Subscriber = () => console.log('Subscriber' , store.getState());
+
+// store.subscribe(Subscriber);
+
+const actions = bindActionCreators({title , profile}, store.dispatch);
+
+console.log(actions);
+
+actions.title({title : 'sanika'});
+
+// actions.profile('sanika');
 
 
+// console.log(store.dispatch(increment()));
+// console.log(store.dispatch(increment()));
+// console.log(store.dispatch(add(1000)));
+// console.log(store.dispatch(add(200)));
+// console.log(store.dispatch(add(700)));
 
- store.dispatch(increment());
+console.log(store.getState(), 'get state');
 
- console.log(store);
-
- console.log(store.dispatch(increment()));
-
- console.log(store.getState());
-
-
-
- export default store;
-
-
-
+export default store;

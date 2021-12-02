@@ -1,46 +1,33 @@
-
-import { INCREMENT , ADD } from "../actions/Action";
-
-
+import { INCREMENT, ADD } from "../actions/Action";
 
 // Initial state
-const initialState = {value : 0}
+const initialState = { value: 0 };
 
 // action creators
 
-export const increment  = () => ({type : INCREMENT});
+export const increment = () => ({ type: INCREMENT });
 
-export const add = (amount) => ({type : ADD , payload : amount});
+export const add = (amount) => ({ type: ADD, payload: amount });
 
+const Simplereducer = (state = initialState, action) => {
+  if (action.type === INCREMENT) {
+    
+    return {value : state.value + 1}
 
+    // console.log('val' , state.value + 1);
 
+    // return { value };
+    
+  }
 
-const Simplereducer = (state=initialState , action) => {
+  if (action.type === ADD) {
+  
+    return {value : state.value + action.payload}
 
-    if(action.type === INCREMENT){
+    // return { result };
+  } 
 
-        const value = state.value + 1;
-
-        return {value};
-
-         
-    }
-
-    if(action.type === ADD){
-         
-          const result = state.value + action.payload
-
-          return {result};
-    }
-
-    else {
-
-         return state;
-    }
-
-
-     
-}
-
+  return state;
+};
 
 export default Simplereducer;
