@@ -3,12 +3,15 @@ import { bindActionCreators } from "redux";
 // import Simplereducer, { increment , add} from "../redux/reducers/Simplereducer";
 import {title , profile} from '../redux/action_creators.js/Action_creator'
 import { reducer } from "../redux/reducers/Nestedreducer";
-
-const store = createStore(
-  reducer,
-  +window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
-
+import { composeWithDevTools } from "redux-devtools-extension";
+// const store = createStore(
+//   reducer,
+//   +window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+// );
+const store = createStore(reducer, composeWithDevTools(
+    // applyMiddleware(...middleware),
+    // other store enhancers if any
+  ));
 // store.dispatch(increment());
 
 // console.log(store);
@@ -25,6 +28,8 @@ const actions = bindActionCreators({title , profile}, store.dispatch);
 console.log(actions);
 
 actions.title({title : 'sanika'});
+
+actions.profile({profile : 'javascript developer'});
 
 // actions.profile('sanika');
 
