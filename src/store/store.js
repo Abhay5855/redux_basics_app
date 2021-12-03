@@ -1,22 +1,16 @@
 import { createStore } from "redux";
-import Simplereducer, { increment } from "../redux/reducers/Simplereducer";
+import { bindActionCreators } from "redux";
 
-
- const store = createStore(Simplereducer);
-
-
-
- store.dispatch(increment());
-
- console.log(store);
-
- console.log(store.dispatch(increment()));
-
- console.log(store.getState());
+import { composeWithDevTools } from "redux-devtools-extension";
 
 
 
- export default store;
 
 
 
+
+
+
+
+
+export default store;
