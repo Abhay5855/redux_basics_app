@@ -20,19 +20,27 @@ export const reset = (val) => ({type : RESET_COUNTER, payload : val})
 //Clothing app
 
 
-export const set_product = (products) => ({
+const set_products = (products) => ({
+
      type : SET_PRODUCT,
-     payload : products
-})
-
-export const selected_product = (products) => ({
-
-         type : SELECTED_PRODUCT,
-         payload : products,
-})
-
-
-export const removed_products = (products) => ({
-     type : REMOVE_SELECTED_PRODUCT,
      payload : products,
+
+      
 })
+      
+       
+const select_product = (product) => ({
+
+      type : SELECTED_PRODUCT,
+      payload : product,
+}) 
+     
+
+const remove_product = (product) => ({
+        
+      type : REMOVE_SELECTED_PRODUCT,
+      payload : product,
+})
+
+
+
