@@ -1,6 +1,6 @@
 
 
-import {ADD_TITLE  , ADD_PROFILE, INCREMENT_COUNTER, DECREMENT_COUNTER, RESET_COUNTER, SET_PRODUCT, SELECTED_PRODUCT, REMOVE_SELECTED_PRODUCT } from "../actions/Action";
+import {ADD_TITLE  , ADD_PROFILE, INCREMENT_COUNTER, DECREMENT_COUNTER, RESET_COUNTER, SET_PRODUCT, SELECTED_PRODUCT, REMOVE_SELECTED_PRODUCT, ALL_CHARACTERS, SELECTED_CHARACTER } from "../actions/Action";
 
 
 export const title = (title) => ({type : ADD_TITLE , payload : title} );
@@ -42,5 +42,27 @@ export const remove_product = (product) => ({
       payload : product,
 })
 
+
+
+
+// Rick and morty action creators
+
+
+export const all_characters = (characters) => (
+      {
+             type : ALL_CHARACTERS,
+             payload : characters,
+      }
+)
+
+
+export const selected_character = (character) => ({
+
+       type : SELECTED_CHARACTER,
+       payload : character,
+})
+
+       
+         
 
 
