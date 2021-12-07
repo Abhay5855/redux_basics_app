@@ -11,11 +11,11 @@ function App() {
     <div className="App">
 
 
-      <Product_List />
+      {/* <Product_List /> */}
 
       {/* <Selected_Product /> */}
 
-      {/* <Router>
+      <Router>
 
       <Routes>
 
@@ -23,14 +23,14 @@ function App() {
 
           <Route  path ='/' element={<Product_List/>} />
 
-          <Route path='/selected' element={<Selected_Product />} />
+          <Route path='/selected/:id' element={<Selected_Product />} />
 
         
 
       </Routes>
 
 
-   </Router> */}
+   </Router>
 
 
     

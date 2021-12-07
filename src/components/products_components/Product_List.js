@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import axios from 'axios';
 import { set_products } from "../../redux/action_creators.js/Action_creator";
 
-
+import './product_list.css';
+import { Link } from "react-router-dom";
 
 
 
@@ -23,8 +24,38 @@ const Product_List = () => {
     const display = products.map((product , idx) => {
 
         return (
+                
+            
 
-            <h1>{product.title}</h1>
+
+            <div className='main' key={idx}>
+
+                <Link to={`/selected/${product.id}`}>
+
+                <figure>
+
+                     <div>
+                         <img src={product.image} alt='img' />
+                     </div>
+
+                    <figcaption>
+
+                        <h3>{product.title}</h3>
+                        <span>$ {product.price}</span>
+                        <p>Category : {product.category}</p>
+
+                    </figcaption>
+
+                </figure>
+
+                </Link>
+
+            </div>
+
+           
+
+        
+           
 
         )
             
@@ -69,13 +100,17 @@ const Product_List = () => {
     
      
     return (
-         <>
 
-         <h1>Products</h1>
+        // <>
+        // <h1>Products page</h1>
 
-         <div>{display}</div>
+        <div>{display}</div>
+        // </>
+       
+
          
-         </>
+         
+         
     )
 }
 

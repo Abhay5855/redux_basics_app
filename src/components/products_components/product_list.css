@@ -1,0 +1,35 @@
+
+
+/* .main {
+    width: 500px;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .main>* {
+      flex: 0 0 55.3333%;
+  } */
+
+.main {
+      display: flex;
+      gap: 4%;
+}
+
+figure {
+     
+    flex-basis: 22%;
+    width: 200px;
+    border : 1px solid black;
+    margin : 1rem;
+    padding: 0.5rem;
+    /* flex-direction: column; */
+      
+ 
+}
+
+img {
+
+    width : 100px;
+    height: 100px;
+    align-items: center;
+     
+}

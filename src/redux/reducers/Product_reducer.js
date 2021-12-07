@@ -1,10 +1,10 @@
-import { SET_PRODUCT } from "../actions/Action";
+import { REMOVE_SELECTED_PRODUCT, SELECTED_PRODUCT, SET_PRODUCT } from "../actions/Action";
 
 const initialState = {
   products: []
 };
 
-// Single product reducer
+// All products reducer
 
 export const Products_reducer = (state = initialState, {type , payload}) => {
   switch (type) {
@@ -16,3 +16,31 @@ export const Products_reducer = (state = initialState, {type , payload}) => {
       return state;
   }
 };
+
+
+
+export const selected_reducer = (state={} , {type , payload}) => {
+
+      switch(type){
+
+
+              case SELECTED_PRODUCT : 
+
+                 return {...state , ...payload}
+
+
+                 case REMOVE_SELECTED_PRODUCT :
+                    
+                    return {};
+
+                 default :
+                  return state;
+      }
+
+
+          
+}
+
+
+
+
