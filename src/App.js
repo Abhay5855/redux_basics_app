@@ -11,11 +11,11 @@ function App() {
     <div className="App">
 
 
-      {/* <Product_List />
+      <Product_List />
 
-      <Selected_Product /> */}
+      {/* <Selected_Product /> */}
 
-      <Router>
+      {/* <Router>
 
       <Routes>
 
@@ -30,7 +30,7 @@ function App() {
       </Routes>
 
 
-   </Router>
+   </Router> */}
 
 
     
