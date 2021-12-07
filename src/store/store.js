@@ -1,28 +1,23 @@
-import { combineReducers,createStore } from "redux";
-import { bindActionCreators } from "redux";
-import { devToolsEnhancer } from 'redux-devtools-extension';
+import { combineReducers, createStore } from "redux"
+import { devToolsEnhancer } from "redux-devtools-extension";
+import { Products_reducer, selected_reducer } from "../redux/reducers/Product_reducer"
 
 
-import Product_reducer from "../redux/reducers/Product_reducer";
 
 
-// const reducer = combineReducers(Product_reducer);
 
-const rootReducer = combineReducers({
-    allProducts : Product_reducer
+
+const reducers = combineReducers({
+      
+     allProducts : Products_reducer,
+     product : selected_reducer,
 });
 
 
-const store = createStore(rootReducer, devToolsEnhancer(
-   
+const store = createStore(reducers , devToolsEnhancer(
 
-   
+
 ));
-
-// console.log(store.getState());
-
-// console.log(store);
-
 
 
 

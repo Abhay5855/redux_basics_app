@@ -1,40 +1,46 @@
-import { SET_PRODUCT } from "../actions/Action";
-
-
-
+import { REMOVE_SELECTED_PRODUCT, SELECTED_PRODUCT, SET_PRODUCT } from "../actions/Action";
 
 const initialState = {
-      products : [
-           {
-                id : 1,
-                name : 'Hoodie',
-                price : 300,
-           }
-      ]
+  products: []
+};
+
+// All products reducer
+
+export const Products_reducer = (state = initialState, {type , payload}) => {
+  switch (type) {
+    case  SET_PRODUCT:
+      
+         return {...state , products : payload}
+
+    default:
+      return state;
+  }
+};
+
+
+
+export const selected_reducer = (state={} , {type , payload}) => {
+
+      switch(type){
+
+
+              case SELECTED_PRODUCT : 
+
+                 return {...state , ...payload}
+
+
+                 case REMOVE_SELECTED_PRODUCT :
+                    
+                    return {};
+
+                 default :
+                  return state;
+      }
+
+
+          
 }
 
 
-const Product_reducer = (state=initialState , action) => {
-
-     switch(action.type){
-           
-          case (action.type === SET_PRODUCT):
-               return state;
-
-
-          default: 
-          return state;
-     }
-
-    
-
-   
-
- 
-
-}
-
-
-export default Product_reducer;
 
 
