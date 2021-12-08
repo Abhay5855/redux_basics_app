@@ -2,6 +2,8 @@ import "./App.css";
 import {BrowserRouter as Router , Route , Routes} from 'react-router-dom'
 import Product_List from "./components/products_components/Product_List";
 import Selected_Product from "./components/products_components/Selected_Product";
+import Selected_Characters from "./components/rick_morty_components/Selected_Character";
+import Display_Characters from "./components/rick_morty_components/Display_Characters";
 
 function App() {
   return (
@@ -21,9 +23,9 @@ function App() {
 
         
 
-          <Route  path ='/' element={<Product_List/>} />
+          <Route  path ='/' element={<Display_Characters/>} />
 
-          <Route path='/selected/:id' element={<Selected_Product />} />
+          <Route path='/character/:id' element={<Selected_Characters />} />
 
         
 
