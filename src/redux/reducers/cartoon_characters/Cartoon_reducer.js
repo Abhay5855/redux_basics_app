@@ -20,7 +20,7 @@ export const Displayall_characters = (state=initialState , {type , payload} ) =>
 
              case ALL_CHARACTERS:
 
-                  return state;
+                  return {...state , characters : payload};
 
 
                   default : 
